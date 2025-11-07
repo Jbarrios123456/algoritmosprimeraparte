@@ -20,8 +20,41 @@ def jm_abrir_ayuda():
     jm_ventana = tk.Toplevel(jm_principal)
     jm_ventana.title("Ventana de Ayuda")
     jm_ventana.geometry("250x150")
+
+    jm_boton_informacion = tk.Button(jm_ventana, text="Informacion", command=jm_informacion)
+    jm_boton_informacion.pack()
+    jm_boton_manual = tk.Button(jm_ventana, text="Manual de Usuario", command=jm_manual_usuario)
+    jm_boton_manual.pack()
+    jm_boton_integrantes = tk.Button(jm_ventana, text="Integrantes", command=jm_integrantes)
+    jm_boton_integrantes.pack()
+
     jm_boton_cerrar = tk.Button(jm_ventana, text="Cerrar", command=jm_ventana.destroy)
     jm_boton_cerrar.pack()
+
+def jm_informacion():
+    jm_ventana = tk.Toplevel(jm_principal)
+    jm_ventana.title("informacion")
+    jm_ventana.geometry("500x300")
+    jm_titulo = tk.Label(jm_ventana, text="Informacion sobre nuestor proyecto", font=("Arial", 20))
+    jm_titulo.pack(pady=20)
+    jm_info = tk.Label(jm_ventana, text="Luego pondremos información", font=("Arial", 10))
+    jm_info.pack(pady=20)
+
+def jm_manual_usuario():
+    jm_ventana = tk.Toplevel(jm_principal)
+    jm_ventana.title("Manual de Usuario")
+    jm_ventana.geometry("250x150")
+
+def jm_integrantes():
+    jm_ventana = tk.Toplevel(jm_principal)
+    jm_ventana.title("Integrantes")
+    jm_ventana.geometry("600x300")
+    jm_junior = tk.Label(jm_ventana, text="Junior Alvaro René Barrios Flores" \
+    " Carnet: 7690-25-16187", font=("Arial", 15))
+    jm_junior.pack(pady=40)
+    jm_maynor = tk.Label(jm_ventana, text="Maynor Suriel Del Valle Alvarado" \
+    " Carnet: 7690-25-21809", font=("Arial", 15))
+    jm_maynor.pack(pady=20)
 
 jm_principal = tk.Tk()
 jm_principal.title("Menú Principal")
