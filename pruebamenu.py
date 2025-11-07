@@ -1,6 +1,7 @@
 import tkinter as tk
 
 # significado jm = Junior y Maynor
+# hola
 
 def jm_abrir_archivo():
     jm_ventana = tk.Toplevel(jm_principal)
