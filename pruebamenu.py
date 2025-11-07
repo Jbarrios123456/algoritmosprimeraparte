@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 
 # significado jm = Junior y Maynor
 # hola
@@ -7,6 +8,8 @@ def jm_abrir_archivo():
     jm_ventana = tk.Toplevel(jm_principal)
     jm_ventana.title("Ventana de Archivo")
     jm_ventana.geometry("250x150")
+    jm_boton_aarchivo = tk.Button(jm_ventana, text="Abrir el archivo", command=jm_archivo)
+    jm_boton_aarchivo.pack()
     jm_boton_cerrar = tk.Button(jm_ventana, text="Cerrar", command=jm_ventana.destroy)
     jm_boton_cerrar.pack()
 
@@ -56,6 +59,14 @@ def jm_integrantes():
     jm_maynor = tk.Label(jm_ventana, text="Maynor Suriel Del Valle Alvarado" \
     " Carnet: 7690-25-21809", font=("Arial", 15))
     jm_maynor.pack(pady=20)
+
+def jm_archivo():
+    jm_ventana = tk.Toplevel(jm_principal)
+    jm_ventana.geometry("500x300")
+    with open("hola.txt", "r", encoding="utf-8") as archivo:
+    contenido = archivo.read()
+    print("Contenido del archivo:")
+    print(contenido)
 
 jm_principal = tk.Tk()
 jm_principal.title("Menú Principal")
